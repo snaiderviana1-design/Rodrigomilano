@@ -1,0 +1,355 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Elevate Mídia +18</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: página de ganhos. Preto e vermelho, a faixa de US$ 6 a 18 mil no topo, plataformas clicáveis no meio. */
+:root {
+  --bg: #050507;
+  --surface: #12121A;
+  --surface-2: #0B0B10;
+  --fg: #F5F5F7;
+  --muted: #AAAABA;
+  --line: #2A1A1E;
+  --line-2: #2C2C38;
+  --red: #FF3030;
+  --red-deep: #B10F1C;
+  --orange: #FF7518;
+  --font-display: "Bricolage Grotesque", "Arial Narrow", Arial, sans-serif;
+  --font-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  overflow-x: hidden;
+}
+.wrap { max-width: 1080px; margin: 0 auto; position: relative; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.05; margin: 0; text-wrap: balance; letter-spacing: -0.02em; }
+p { margin: 0; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); }
+
+/* movimento */
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes pulse { 0%, 100% { opacity: 0.55; transform: scale(1); } 50% { opacity: 0.9; transform: scale(1.08); } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes sweep { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+@keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.rise { animation: rise 0.8s cubic-bezier(.2,.7,.2,1) both; }
+.d1 { animation-delay: 0.08s; } .d2 { animation-delay: 0.18s; } .d3 { animation-delay: 0.3s; } .d4 { animation-delay: 0.42s; }
+
+/* header */
+header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding-block: 20px; border-bottom: 1px solid var(--line); }
+.brand { font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.01em; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.brand b { color: var(--red); font-weight: 800; }
+.brand i { width: 10px; height: 10px; background: var(--red); display: inline-block; transform: rotate(45deg); box-shadow: 0 0 14px var(--red); }
+nav { display: flex; flex-wrap: wrap; gap: 4px 20px; font-size: 14px; color: var(--muted); }
+nav a { text-decoration: none; padding: 4px 0; }
+nav a:hover { color: var(--red); }
+
+/* hero */
+.hero { position: relative; padding-block: 64px 48px; display: grid; gap: 24px; }
+.glow { position: absolute; right: -10%; top: -10%; width: min(640px, 90vw); aspect-ratio: 1; background: radial-gradient(closest-side, rgba(255,48,48,0.38), rgba(255,48,48,0) 70%); animation: pulse 5s ease-in-out infinite; pointer-events: none; z-index: 0; }
+.hero > * { position: relative; z-index: 1; }
+.hero .glow { position: absolute; z-index: 0; }
+.hero h1 { font-size: clamp(2.2rem, 7vw, 4.6rem); font-weight: 800; max-width: 16ch; }
+.hero h1 em { font-style: normal; color: var(--red); }
+.lead { color: var(--muted); max-width: 60ch; font-size: 1.1rem; }
+.lead b { color: var(--fg); font-weight: 600; }
+
+/* faixa de ganhos */
+.earn { color: var(--muted); font-size: 1rem; max-width: 60ch; padding-left: 14px; border-left: 2px solid var(--red-deep); }
+.earn b { color: var(--fg); font-weight: 600; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-block; font-weight: 600; text-decoration: none; padding: 14px 22px; border-radius: 4px; border: 1px solid transparent; cursor: pointer; font-family: var(--font-body); font-size: 1rem; transition: transform .15s, background .15s, box-shadow .15s; }
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--red); color: #fff; box-shadow: 0 0 0 rgba(255,48,48,0); }
+.btn-primary:hover { background: #FF4A3A; box-shadow: 0 8px 28px rgba(255,48,48,0.4); }
+.btn-ghost { border-color: var(--red); color: var(--fg); background: transparent; }
+.btn-ghost:hover { background: rgba(255,48,48,0.14); }
+
+/* ticker */
+.ticker { border-block: 1px solid var(--line); overflow: hidden; background: var(--surface-2); margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); }
+.ticker .belt { display: flex; width: max-content; animation: marquee 28s linear infinite; }
+.ticker .belt span { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; padding: 14px 28px; color: var(--muted); white-space: nowrap; text-transform: uppercase; letter-spacing: 0.04em; }
+.ticker .belt span::after { content: "◆"; color: var(--red); margin-left: 56px; font-size: 0.7em; }
+
+/* seções */
+section { padding-block: 60px; border-top: 1px solid var(--line); }
+.ticker + section, .hero + section { border-top: 0; }
+section > .wrap > .eyebrow { margin-bottom: 14px; display: block; }
+section h2 { font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 700; max-width: 22ch; }
+.intro { color: var(--muted); max-width: 62ch; margin-top: 16px; }
+
+/* plataformas */
+.plat { margin-top: 32px; display: grid; gap: 20px; }
+.btns { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 10px; }
+.pbtn { background: var(--surface); border: 1px solid var(--line-2); color: var(--fg); padding: 18px 12px; cursor: pointer; font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; letter-spacing: -0.01em; text-align: center; transition: transform .15s, border-color .15s, background .15s, box-shadow .15s; }
+.pbtn small { display: block; font-family: var(--font-mono); font-weight: 400; font-size: 11px; letter-spacing: 0.08em; color: var(--muted); margin-top: 4px; text-transform: uppercase; }
+.pbtn:hover { transform: translateY(-3px); border-color: var(--red); }
+.pbtn[aria-selected="true"] { background: linear-gradient(180deg, #2A0C10, var(--surface)); border-color: var(--red); box-shadow: 0 0 0 1px var(--red), 0 10px 32px rgba(255,48,48,0.28); }
+.pbtn .red { color: var(--red); }
+.panel { background: var(--surface); border: 1px solid var(--line-2); border-left: 4px solid var(--red); padding: 28px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 40px; animation: rise .5s both; }
+.panel h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 6px; }
+.panel .desc { color: var(--muted); }
+.stat { display: grid; gap: 4px; align-content: start; }
+.stat .k { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.stat .v { font-family: var(--font-display); font-weight: 800; font-size: 2.6rem; line-height: 1; color: var(--red); letter-spacing: -0.02em; }
+.stat .v.s { color: var(--fg); font-size: 1.7rem; }
+.panel .small { grid-column: 1 / -1; border-top: 1px solid var(--line-2); padding-top: 14px; color: var(--muted); font-size: 0.88rem; }
+.panel .small b { color: var(--fg); font-weight: 500; }
+
+/* testes */
+.trials { margin-top: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 1px; background: var(--line-2); border: 1px solid var(--line-2); }
+.trial { background: var(--bg); padding: 18px; display: grid; gap: 4px; min-width: 0; }
+.trial .p { font-weight: 600; }
+.trial .d { font-family: var(--font-display); font-weight: 800; font-size: 1.9rem; color: var(--red); line-height: 1.05; }
+.trial .d small { font-size: 0.5em; color: var(--muted); font-family: var(--font-mono); font-weight: 400; letter-spacing: 0.05em; }
+
+/* vantagens */
+.cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 32px; border: 1px solid var(--line-2); }
+.col { padding: 24px; border-right: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); margin: 0 -1px -1px 0; min-width: 0; transition: background .2s; }
+.col:hover { background: #160A0D; }
+.col .tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); display: block; margin-bottom: 10px; }
+.col h3 { font-size: 1.1rem; font-family: var(--font-body); font-weight: 600; letter-spacing: 0; margin-bottom: 8px; }
+.col p { color: var(--muted); font-size: 0.95rem; }
+
+/* ganhos detalhados */
+.finance { display: grid; grid-template-columns: minmax(0, 1fr); margin-top: 28px; }
+.ledger { margin: 0; display: grid; }
+.ledger div { display: grid; grid-template-columns: minmax(0, 14rem) minmax(0, 1fr); gap: 4px 20px; padding: 16px 0; border-bottom: 1px solid var(--line-2); }
+.ledger div:first-child { border-top: 1px solid var(--line-2); }
+.ledger dt { font-weight: 600; }
+.ledger dd { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.ledger dd b { color: var(--fg); font-weight: 500; }
+
+/* credenciais */
+.creds { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 32px; }
+.cred { border-top: 2px solid var(--red); padding-top: 14px; }
+.cred b { font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; display: block; line-height: 1; margin-bottom: 8px; }
+.cred p { color: var(--muted); font-size: 0.95rem; }
+.note { margin-top: 16px; font-size: 0.85rem; color: var(--muted); max-width: 72ch; }
+
+/* contato */
+.contact { margin-top: 28px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+.card { background: var(--surface); border: 1px solid var(--line-2); padding: 24px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.card.hot { border-color: var(--red); background: linear-gradient(180deg, #1E0B0F, var(--surface)); }
+.card .k { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.card .v { font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; word-break: break-word; user-select: all; }
+.card .who { color: var(--muted); font-size: 0.95rem; }
+.card .btn { justify-self: start; }
+
+footer { border-top: 1px solid var(--line); padding-block: 32px 40px; display: grid; gap: 14px; font-size: 0.85rem; color: var(--muted); }
+footer .legal { max-width: 82ch; }
+footer .other { font-size: 0.78rem; opacity: 0.8; }
+footer .other a { color: var(--muted); text-underline-offset: 3px; }
+footer .other a:hover { color: var(--fg); }
+
+@media (max-width: 800px) {
+  .cols, .creds, .contact, .panel { grid-template-columns: minmax(0, 1fr); }
+  .ledger div { grid-template-columns: minmax(0, 1fr); }
+  .hero { padding-block: 44px 36px; }
+  .earn { padding: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .rise, .glow, .earn::after, .ticker .belt, .track span, .panel { animation: none !important; }
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <a class="brand" href="#inicio"><i></i>ELEVATE MÍDIA <b>+18</b></a>
+    <nav aria-label="Seções">
+      <a href="#plataformas">Plataformas</a>
+      <a href="#teste">Período de teste</a>
+      <a href="#vantagens">Vantagens</a>
+      <a href="#ganhos">Ganhos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <div class="hero">
+      <div class="glow" aria-hidden="true"></div>
+      <span class="eyebrow rise">Agência para criadores adultos maiores de 18 anos</span>
+      <h1 class="rise d1">O objetivo é um só: <em>faturar mais todo mês.</em></h1>
+      <p class="lead rise d2">Equipe grande, com vários negócios na área de marketing das principais plataformas. Metas, responsabilidades e garantias formalizadas em contrato. Responsável: <b>Rodrigo Schnistler</b>.</p>
+
+      <p class="earn rise d3">Parcerias com ganho bruto mensal de <b>US$ 6 mil a US$ 18 mil</b>, conforme a proposta negociada e o contrato.</p>
+
+      <div class="cta-row rise d4">
+        <a class="btn btn-primary" href="#contato">Quero a proposta</a>
+        <a class="btn btn-ghost" href="#plataformas">Ver plataformas</a>
+      </div>
+    </div>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="belt">
+        <span>Privacy</span><span>XVideos</span><span>XVideos RED</span><span>OnlyFans</span><span>Pornhub</span><span>Outras plataformas</span>
+        <span>Privacy</span><span>XVideos</span><span>XVideos RED</span><span>OnlyFans</span><span>Pornhub</span><span>Outras plataformas</span>
+      </div>
+    </div>
+
+    <section id="plataformas">
+      <div class="wrap">
+        <span class="eyebrow">Plataformas</span>
+        <h2>Escolha a plataforma e veja os detalhes</h2>
+        <p class="intro">Toque em uma plataforma para ver o período de teste e os números da parceira estratégica.</p>
+        <div class="plat">
+          <div class="btns" role="tablist" aria-label="Plataformas">
+            <button class="pbtn" role="tab" id="t-privacy" aria-selected="true" data-k="privacy">Privacy<span class="red">●</span><small>7 ou 16 dias</small></button>
+            <button class="pbtn" role="tab" id="t-xvideos" aria-selected="false" data-k="xvideos">XVideos<small>30 dias</small></button>
+            <button class="pbtn" role="tab" id="t-red" aria-selected="false" data-k="red">XVideos <span class="red">RED</span><small>15 dias</small></button>
+            <button class="pbtn" role="tab" id="t-onlyfans" aria-selected="false" data-k="onlyfans">OnlyFans<small>15 dias</small></button>
+            <button class="pbtn" role="tab" id="t-pornhub" aria-selected="false" data-k="pornhub">Pornhub<small>15 dias</small></button>
+            <button class="pbtn" role="tab" id="t-outras" aria-selected="false" data-k="outras">Outras<small>15 dias</small></button>
+          </div>
+          <div class="panel" id="panel" role="tabpanel" aria-live="polite">
+            <div>
+              <h3>Privacy</h3>
+              <p class="desc">Assinaturas da parceira estratégica e estratégia de crescimento de base.</p>
+            </div>
+            <div class="stat"><span class="k">Período de teste</span><span class="v">7 ou 16 dias</span></div>
+            <div class="stat"><span class="k">Resultado informado</span><span class="v s">1,1 mi de assinantes</span></div>
+            <div class="stat"><span class="k">Garantia contratual</span><span class="v s">800+ assinantes</span></div>
+            <p class="small">Garantia de <b>800 novas assinantes por mês</b>, a partir do 4º mês de operação. Não é acumulado e não é total de ativas. Contagem e verificação seguem o contrato.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="teste">
+      <div class="wrap">
+        <span class="eyebrow">Período de teste</span>
+        <h2>O teste muda de plataforma para plataforma</h2>
+        <div class="trials">
+          <div class="trial"><span class="p">Privacy</span><span class="d">7 / 16 <small>DIAS</small></span></div>
+          <div class="trial"><span class="p">XVideos</span><span class="d">30 <small>DIAS</small></span></div>
+          <div class="trial"><span class="p">XVideos RED</span><span class="d">15 <small>DIAS</small></span></div>
+          <div class="trial"><span class="p">OnlyFans</span><span class="d">15 <small>DIAS</small></span></div>
+          <div class="trial"><span class="p">Outras</span><span class="d">15 <small>DIAS</small></span></div>
+        </div>
+        <p class="note">Condições do teste registradas em contrato.</p>
+      </div>
+    </section>
+
+    <section id="vantagens">
+      <div class="wrap">
+        <span class="eyebrow">Como trabalhamos</span>
+        <h2>Estrutura de agência grande, tratamento individual</h2>
+        <div class="cols">
+          <div class="col"><span class="tag">Equipe</span><h3>Time grande e experiente</h3><p>Equipe com vários negócios na área de marketing dessas plataformas.</p></div>
+          <div class="col"><span class="tag">Sigilo</span><h3>Sigilo total, se você preferir</h3><p>Se a criadora ou o criador quiser sigilo total, combinamos isso por contrato.</p></div>
+          <div class="col"><span class="tag">Gravação</span><h3>Gravou com a gente, nós pagamos</h3><p>Quem quiser gravar conosco tem a gravação, o equipamento e o local pagos por nós.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ganhos">
+      <div class="wrap">
+        <span class="eyebrow">Ganhos e contrato</span>
+        <h2>Cada valor com o seu nome</h2>
+        <p class="intro">Faturamento da criadora, remuneração da agência e participação ficam separados e descritos. Tudo isso é definido no contrato.</p>
+        <div class="finance">
+          <dl class="ledger">
+            <div><dt>Ganho bruto mensal</dt><dd>Meta de <b>US$ 6.000 a US$ 18.000</b> por mês, brutos. O piso e as condições são os do contrato assinado.</dd></div>
+            <div><dt>Participação</dt><dd>Referência de mercado: <b>70% a 75% para a criadora</b>. O percentual final é o do contrato.</dd></div>
+            <div><dt>Remuneração da agência</dt><dd>Paga a partir do percentual de participação acordado.</dd></div>
+            <div><dt>Taxas, reembolsos e cancelamentos</dt><dd>Tratados conforme as regras de cada plataforma e as cláusulas do contrato.</dd></div>
+            <div><dt>Apuração e pagamento</dt><dd>Apuração <b>trimestral</b>, com calendário de pagamento em contrato.</dd></div>
+            <div><dt>Garantia de assinantes (Privacy)</dt><dd>800+ novas assinantes por mês após os 3 primeiros meses. O contrato define a contagem, as fontes, descontos de cancelamentos, duplicidades e contas inválidas, a verificação, as obrigações de cada parte e o procedimento se a meta não for alcançada. Nenhuma compensação automática existe sem acordo prévio por escrito.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="audiencia">
+      <div class="wrap">
+        <span class="eyebrow">Experiência</span>
+        <h2>Seis anos fechando contratos</h2>
+        <div class="creds">
+          <div class="cred"><b>6 anos</b><p>de mercado em divulgação e crescimento para criadores adultos.</p></div>
+          <div class="cred"><b>Brasil</b><p>com referências em todo o país.</p></div>
+          <div class="cred"><b>Mundo</b><p>com atendimento internacional.</p></div>
+        </div>
+        <p class="note">Números da parceira estratégica informados pela agência e apresentados na negociação. Atuação independente, sem vínculo ou representação oficial das plataformas citadas.</p>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="wrap">
+        <span class="eyebrow">Contato</span>
+        <h2>Fale com Rodrigo Schnistler</h2>
+        <div class="contact">
+          <div class="card hot">
+            <span class="k">WhatsApp</span>
+            <span class="v">+55 11 93773-2151</span>
+            <span class="who">Atendimento direto com Rodrigo Schnistler.</span>
+            <a class="btn btn-primary" href="https://wa.me/5511937732151?text=Ol%C3%A1%2C%20Rodrigo!%20Vim%20pelo%20site%20da%20Elevate%20M%C3%ADdia%20%2B18%20e%20quero%20a%20proposta." target="_blank" rel="noopener noreferrer">Chamar no WhatsApp</a>
+          </div>
+          <div class="card">
+            <span class="k">E-mail</span>
+            <span class="v" id="mail">elevatemidia0@gmail.com</span>
+            <span class="who">Resposta com proposta e modelo de contrato.</span>
+            <button class="btn btn-ghost" id="copy" type="button">Copiar e-mail</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="legal">Elevate Mídia +18, por Rodrigo Schnistler. Conteúdo institucional destinado a maiores de 18 anos. Parceria voltada exclusivamente a criadores adultos maiores de 18 anos. Metas, garantias e condições valem somente conforme contrato assinado. Marca independente, sem vínculo oficial com as plataformas citadas.</div>
+    <div class="other"><a href="https://rodrigowhats-connect.lovable.app" target="_blank" rel="noopener noreferrer">Outros projetos</a></div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var data = {
+    privacy: { n: "Privacy", d: "Assinaturas da parceira estratégica e estratégia de crescimento de base.", t: "7 ou 16 dias", k: "Resultado informado", v: "1,1 mi de assinantes", g: ["Garantia contratual", "800+ assinantes"], s: "Garantia de <b>800 novas assinantes por mês</b>, a partir do 4º mês de operação. Não é acumulado e não é total de ativas. Contagem e verificação seguem o contrato." },
+    xvideos: { n: "XVideos", d: "Divulgação e visibilidade dos vídeos e do perfil.", t: "30 dias", k: "Resultado informado", v: "1,2 bi de views", s: "Condições do teste e das metas registradas em contrato." },
+    red: { n: "XVideos RED", d: "Divulgação direcionada para conteúdo premium.", t: "15 dias", k: "Resultado informado", v: "+R$ 300 mil", s: "Valor informado pela agência sobre a parceira estratégica. Comprovação na negociação." },
+    onlyfans: { n: "OnlyFans", d: "Crescimento de base de assinantes e alcance do perfil.", t: "15 dias", k: "Resultado informado", v: "320 mil assinantes", s: "Condições do teste e das metas registradas em contrato." },
+    pornhub: { n: "Pornhub", d: "Visualizações e divulgação para os vídeos.", t: "15 dias", k: "Resultado informado", v: "2,2 bi de views", s: "Entra no período de teste das demais plataformas. Condições em contrato." },
+    outras: { n: "Outras plataformas", d: "Atendemos outras plataformas de conteúdo adulto sob consulta.", t: "15 dias", k: "Como funciona", v: "Sob consulta", s: "Período de teste de 15 dias. Fale com Rodrigo Schnistler para combinar." }
+  };
+  var panel = document.getElementById("panel");
+  var tabs = document.querySelectorAll(".pbtn");
+  function show(key) {
+    var x = data[key]; if (!x) return;
+    var html = '<div><h3>' + x.n + '</h3><p class="desc">' + x.d + '</p></div>' +
+      '<div class="stat"><span class="k">Período de teste</span><span class="v">' + x.t + '</span></div>' +
+      '<div class="stat"><span class="k">' + x.k + '</span><span class="v s">' + x.v + '</span></div>' +
+      (x.g ? '<div class="stat"><span class="k">' + x.g[0] + '</span><span class="v s">' + x.g[1] + '</span></div>' : '') +
+      '<p class="small">' + x.s + '</p>';
+    panel.style.animation = "none"; void panel.offsetWidth; panel.style.animation = "";
+    panel.innerHTML = html;
+    for (var i = 0; i < tabs.length; i++) tabs[i].setAttribute("aria-selected", tabs[i].getAttribute("data-k") === key ? "true" : "false");
+  }
+  for (var i = 0; i < tabs.length; i++) tabs[i].addEventListener("click", function () { show(this.getAttribute("data-k")); });
+
+  // copiar e-mail
+  var btn = document.getElementById("copy"), mail = document.getElementById("mail");
+  btn.addEventListener("click", function () {
+    var done = function () { btn.textContent = "E-mail copiado"; setTimeout(function () { btn.textContent = "Copiar e-mail"; }, 2000); };
+    var fallback = function () {
+      try { var r = document.createRange(); r.selectNodeContents(mail); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "Selecionado, copie"; } catch (e) {}
+    };
+    try { navigator.clipboard.writeText(mail.textContent).then(done, fallback); } catch (e) { fallback(); }
+  });
+})();
+</script>
+
+</body></html>
